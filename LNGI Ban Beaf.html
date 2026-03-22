@@ -2,12 +2,13 @@
 <html>
 <body>
 Running: <input type="checkbox" id="numberRunning" checked></input>
-<button onclick="func1()">Reset to 0</button>
-<button onclick="func2()">x2 Speed</button>
-<button onclick="func3()">/2 Speed</button>
+<button onclick="t=0">Reset to 0</button>
+<button onclick="speed*=2">x2 Speed</button>
+<button onclick="speed/=2">/2 Speed</button>
 <p><font size="5" id="number"></font></p>
 <script>
 var t=0;
+var speed=1;
 var tReduce=0;
 var maxChars = 0;
 function save() {
@@ -216,7 +217,7 @@ function displayNumber() {
 		}
 	}
 	if (document.getElementById("numberRunning").checked) {
-		t+=1;
+		t+=speed;
 	}
 	finalNumber // for unan
 	document.getElementById("number").innerHTML = finalNumber;
